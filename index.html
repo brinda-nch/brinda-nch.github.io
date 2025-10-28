@@ -1,0 +1,877 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Brinda Nallanichakravartula | Portfolio</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary-color: #6366f1;
+            --secondary-color: #ec4899;
+            --dark-color: #1e293b;
+            --light-color: #f8fafc;
+            --text-color: #334155;
+            --gradient: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Times New Roman', Times, serif;
+            color: var(--text-color);
+            line-height: 1.6;
+            overflow-x: hidden;
+            background: #fffacd;
+        }
+
+        /* Navigation */
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: #9333ea;
+            backdrop-filter: blur(10px);
+            box-shadow: 0 2px 20px rgba(0, 0, 0, 0.1);
+            z-index: 1000;
+            transition: all 0.3s ease;
+        }
+
+        nav.scrolled {
+            padding: 0.5rem 0;
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: white;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: white;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            position: relative;
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: white;
+            transition: width 0.3s ease;
+        }
+
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+
+        /* Mobile Menu */
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            font-size: 1.5rem;
+            cursor: pointer;
+            color: white;
+        }
+
+        /* Hero Section */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: #fffacd;
+            position: relative;
+            overflow: hidden;
+            padding: 2rem;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg width="100" height="100" xmlns="http://www.w3.org/2000/svg"><defs><pattern id="grid" width="100" height="100" patternUnits="userSpaceOnUse"><path d="M 100 0 L 0 0 0 100" fill="none" stroke="rgba(255,255,255,0.1)" stroke-width="1"/></pattern></defs><rect width="100%" height="100%" fill="url(%23grid)" /></svg>');
+            opacity: 0.3;
+        }
+
+        .hero-content {
+            text-align: center;
+            color: black;
+            z-index: 1;
+            animation: fadeInUp 1s ease-out;
+        }
+
+        .hero-content h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 4rem;
+            margin-bottom: 1rem;
+            animation: fadeInUp 1s ease-out 0.2s both;
+        }
+
+        .hero-content .subtitle {
+            font-size: 1.5rem;
+            margin-bottom: 2rem;
+            font-weight: 300;
+            animation: fadeInUp 1s ease-out 0.4s both;
+        }
+
+        .hero-content .location {
+            font-size: 1.1rem;
+            margin-bottom: 2rem;
+            opacity: 0.9;
+            animation: fadeInUp 1s ease-out 0.6s both;
+        }
+
+        .cta-buttons {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+            animation: fadeInUp 1s ease-out 0.8s both;
+        }
+
+        .btn {
+            padding: 1rem 2.5rem;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            display: inline-block;
+            cursor: pointer;
+            border: none;
+            font-size: 1rem;
+        }
+
+        .btn-primary {
+            background: #9333ea;
+            color: white;
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+        }
+
+        .btn-secondary {
+            background: transparent;
+            color: black;
+            border: 2px solid black;
+        }
+
+        .btn-secondary:hover {
+            background: black;
+            color: #fffacd;
+            transform: translateY(-3px);
+        }
+
+        /* Section Styles */
+        section {
+            padding: 5rem 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .section-title {
+            font-size: 2.5rem;
+            text-align: center;
+            margin-bottom: 3rem;
+            position: relative;
+            font-family: 'Playfair Display', serif;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -15px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 4px;
+            background: var(--gradient);
+            border-radius: 2px;
+        }
+
+        /* About Section */
+        .about {
+            background: #fffacd;
+        }
+
+        .about-content {
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: center;
+            font-size: 1.1rem;
+            line-height: 1.8;
+        }
+
+        /* Experience Section */
+        .experience-grid {
+            display: grid;
+            gap: 2rem;
+        }
+
+        .experience-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 15px;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+            border-left: 4px solid var(--primary-color);
+        }
+
+        .experience-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
+        }
+
+        .experience-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: start;
+            margin-bottom: 1rem;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+
+        .experience-title {
+            font-size: 1.3rem;
+            font-weight: 600;
+            color: var(--dark-color);
+        }
+
+        .experience-company {
+            color: var(--primary-color);
+            font-weight: 600;
+        }
+
+        .experience-date {
+            color: var(--secondary-color);
+            font-weight: 500;
+        }
+
+        .experience-card ul {
+            list-style: none;
+            margin-top: 1rem;
+        }
+
+        .experience-card li {
+            padding-left: 1.5rem;
+            margin-bottom: 0.75rem;
+            position: relative;
+        }
+
+        .experience-card li::before {
+            content: '▹';
+            position: absolute;
+            left: 0;
+            color: var(--primary-color);
+            font-weight: bold;
+        }
+
+        /* Skills Section */
+        .skills {
+            background: #fffacd;
+        }
+
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .skill-category {
+            background: white;
+            padding: 2rem;
+            border-radius: 15px;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        .skill-category h3 {
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+            font-size: 1.3rem;
+        }
+
+        .skill-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.75rem;
+        }
+
+        .skill-tag {
+            background: var(--gradient);
+            color: white;
+            padding: 0.5rem 1rem;
+            border-radius: 25px;
+            font-size: 0.9rem;
+            font-weight: 500;
+        }
+
+        /* Volunteer Section */
+        .volunteer-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .volunteer-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 15px;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+        }
+
+        .volunteer-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+        }
+
+        .volunteer-card h3 {
+            color: var(--primary-color);
+            margin-bottom: 0.5rem;
+        }
+
+        .volunteer-card .organization {
+            color: var(--secondary-color);
+            font-weight: 600;
+            margin-bottom: 1rem;
+        }
+
+        /* Activities Section */
+        .activities {
+            background: #fffacd;
+        }
+
+        .activities-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .activity-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 15px;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+        }
+
+        .activity-card:hover {
+            transform: scale(1.05);
+        }
+
+        .activity-icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+
+        .activity-card h3 {
+            color: var(--primary-color);
+            margin-bottom: 0.5rem;
+        }
+
+        .activity-card .institution {
+            color: var(--secondary-color);
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+        }
+
+        .activity-card .duration {
+            color: var(--text-color);
+            font-size: 0.9rem;
+            margin-bottom: 1rem;
+        }
+
+        /* Contact Section */
+        .contact {
+            background: var(--gradient);
+            color: white;
+            text-align: center;
+        }
+
+        .contact .section-title {
+            color: white;
+        }
+
+        .contact .section-title::after {
+            background: white;
+        }
+
+        .contact-info {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            flex-wrap: wrap;
+            margin-top: 2rem;
+        }
+
+        .contact-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .contact-item a {
+            color: white;
+            text-decoration: none;
+            font-size: 1.1rem;
+            transition: all 0.3s ease;
+        }
+
+        .contact-item a:hover {
+            transform: scale(1.1);
+            opacity: 0.8;
+        }
+
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+
+        .social-links a {
+            width: 50px;
+            height: 50px;
+            background: rgba(255, 255, 255, 0.2);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            text-decoration: none;
+            font-size: 1.5rem;
+            transition: all 0.3s ease;
+        }
+
+        .social-links a:hover {
+            background: white;
+            color: var(--primary-color);
+            transform: translateY(-5px);
+        }
+
+        /* Footer */
+        footer {
+            background: var(--dark-color);
+            color: white;
+            text-align: center;
+            padding: 2rem;
+        }
+
+        /* Animations */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .fade-in {
+            animation: fadeInUp 0.8s ease-out;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+
+            .mobile-menu-btn {
+                display: block;
+            }
+
+            .hero-content h1 {
+                font-size: 2.5rem;
+            }
+
+            .hero-content .subtitle {
+                font-size: 1.2rem;
+            }
+
+            .section-title {
+                font-size: 2rem;
+            }
+
+            section {
+                padding: 3rem 1rem;
+            }
+
+            .experience-header {
+                flex-direction: column;
+            }
+
+            .skills-grid,
+            .volunteer-grid,
+            .activities-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .hero-content h1 {
+                font-size: 2rem;
+            }
+
+            .hero-content .subtitle {
+                font-size: 1rem;
+            }
+
+            .btn {
+                padding: 0.75rem 1.5rem;
+                font-size: 0.9rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav id="navbar">
+        <div class="nav-container">
+            <div class="logo">BN</div>
+            <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#experience">Experience</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#volunteer">Volunteer</a></li>
+                <li><a href="#activities">Activities</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+            <button class="mobile-menu-btn">☰</button>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="hero-content">
+            <h1>Brinda Nallanichakravartula</h1>
+            <p class="subtitle">Software Engineering Intern at Adstep.io | AI Developer | Quantum Computing Researcher</p>
+            <p class="location">📍 San Jose, California</p>
+            <div class="cta-buttons">
+                <a href="#contact" class="btn btn-primary">Get In Touch</a>
+                <a href="#experience" class="btn btn-secondary">View My Work</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="about" id="about">
+        <h2 class="section-title">About Me</h2>
+        <div class="about-content">
+            <p>
+                Hi! I'm Brinda, a passionate developer and researcher with a focus on artificial intelligence and quantum computing. 
+                I'm dedicated to leveraging cutting-edge technology to solve real-world problems, from developing AI-powered medical 
+                assistants to exploring quantum chemistry simulations. Beyond coding, I'm a certified Bharatanatyam dancer and Carnatic 
+                vocalist, bringing creativity and discipline to everything I do.
+            </p>
+        </div>
+    </section>
+
+    <!-- Experience Section -->
+    <section class="experience" id="experience">
+        <h2 class="section-title">Experience</h2>
+        <div class="experience-grid">
+            <div class="experience-card">
+                <div class="experience-header">
+                    <div>
+                        <div class="experience-title">Software Engineering Intern - Google Authentication Lead</div>
+                        <div class="experience-company">Adstep.io</div>
+                    </div>
+                    <div class="experience-date">Present</div>
+                </div>
+                <ul>
+                    <li>Led the development and implementation of Google authentication integration for the Adstep platform</li>
+                    <li>Architected and programmed the synchronization process between the Adstep platform and Google Ads</li>
+                    <li>Designed secure OAuth 2.0 authentication flows ensuring data privacy and seamless user experience</li>
+                    <li>Collaborated with cross-functional teams to integrate Google Ads API capabilities into the platform</li>
+                    <li>Optimized API call efficiency and error handling to ensure reliable data syncing and platform stability</li>
+                </ul>
+            </div>
+
+            <div class="experience-card">
+                <div class="experience-header">
+                    <div>
+                        <div class="experience-title">AI Program Participant</div>
+                        <div class="experience-company">Algoverse AI</div>
+                    </div>
+                    <div class="experience-date">Recent</div>
+                </div>
+                <ul>
+                    <li>Participated in intensive AI training program focusing on machine learning algorithms and applications</li>
+                    <li>Developed and implemented AI models for real-world problem-solving scenarios</li>
+                    <li>Collaborated with peers on AI projects utilizing Python and modern ML frameworks</li>
+                    <li>Gained hands-on experience with neural networks, deep learning, and data processing techniques</li>
+                    <li>Applied computational thinking to design innovative AI solutions for complex challenges</li>
+                </ul>
+            </div>
+
+            <div class="experience-card">
+                <div class="experience-header">
+                    <div>
+                        <div class="experience-title">AI Developer</div>
+                        <div class="experience-company">Jaini AI</div>
+                    </div>
+                    <div class="experience-date">February 2025 - Present</div>
+                </div>
+                <ul>
+                    <li>Developed an AI-powered medical assistant to analyze symptoms and interpret medical documents, supporting faster diagnostic decision-making and improving preliminary accuracy in clinical contexts</li>
+                    <li>Integrated machine learning algorithms and an accessible user interface, enhancing responsiveness, adaptability to diverse clinical queries, and patient engagement during prototype testing</li>
+                    <li>Designed and optimized the user interface with a focus on accessibility and patient engagement, creating an intuitive experience that improved usability scores during prototype testing</li>
+                    <li>Executed the full SDLC from requirements gathering through deployment, leading cross-functional design discussions to ensure clinical relevance and real-world usability</li>
+                    <li>Led cross-functional product design discussions to align chatbot features with clinical relevance, enabling the assistant to deliver medically meaningful outputs validated by domain experts</li>
+                </ul>
+            </div>
+
+            <div class="experience-card">
+                <div class="experience-header">
+                    <div>
+                        <div class="experience-title">Quantum Computing Researcher</div>
+                        <div class="experience-company">UC Berkeley</div>
+                    </div>
+                    <div class="experience-date">Research Program</div>
+                </div>
+                <ul>
+                    <li>Investigated Variational Quantum Eigensolvers (VQEs) for molecular simulations of H₂ and CH₄ using Python (Qiskit and PennyLane), running over 50 simulations that validated reproducibility and demonstrated the scalability of VQE methods for advancing quantum chemistry research</li>
+                    <li>Selected as 1 of 60 students worldwide for a competitive quantum computing research cohort, conducting experiments on Variational Quantum Eigensolvers (VQEs) that achieved more accurate ground-state energy calculations for molecules, advancing applications of quantum physics in computer science</li>
+                    <li>Prepared research findings for dissemination on arXiv under the mentorship of a UC Berkeley Quantum Computing PhD, contributing innovative evidence on VQE efficiency that advanced the field's understanding of quantum chemistry simulations</li>
+                </ul>
+            </div>
+
+            <div class="experience-card">
+                <div class="experience-header">
+                    <div>
+                        <div class="experience-title">Arduino Programmer</div>
+                        <div class="experience-company">UC Berkeley</div>
+                    </div>
+                    <div class="experience-date">February 2025 - May 2025</div>
+                </div>
+                <ul>
+                    <li>Engineered a smart plant-watering system by programming Arduino and leading development of a custom moisture sensor, creating a prototype that automated irrigation with over 90% accuracy in soil-moisture detection</li>
+                    <li>Served as lead presenter at the SWE Symposium, delivering a live demo of the prototype and results to industry professionals, fielding technical Q&A, and articulating design trade-offs and next steps</li>
+                    <li>Selected as 1 of 35 students statewide for UC Berkeley's High School Engineering Program (HSEP), gaining hands-on experience in collaborative engineering design and presenting solutions at the SWE Symposium</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section class="skills" id="skills">
+        <h2 class="section-title">Skills & Expertise</h2>
+        <div class="skills-grid">
+            <div class="skill-category">
+                <h3>Technical Skills</h3>
+                <div class="skill-tags">
+                    <span class="skill-tag">Python</span>
+                    <span class="skill-tag">C++</span>
+                    <span class="skill-tag">HTML/CSS</span>
+                    <span class="skill-tag">Arduino & Robotics</span>
+                    <span class="skill-tag">App Development</span>
+                    <span class="skill-tag">UI/UX Design</span>
+                    <span class="skill-tag">Data Analysis</span>
+                    <span class="skill-tag">Machine Learning</span>
+                    <span class="skill-tag">Quantum Computing</span>
+                </div>
+            </div>
+
+            <div class="skill-category">
+                <h3>Social Skills</h3>
+                <div class="skill-tags">
+                    <span class="skill-tag">Leadership</span>
+                    <span class="skill-tag">Public Speaking</span>
+                    <span class="skill-tag">Team Collaboration</span>
+                    <span class="skill-tag">Event Planning</span>
+                    <span class="skill-tag">Performer</span>
+                </div>
+            </div>
+
+            <div class="skill-category">
+                <h3>Languages</h3>
+                <div class="skill-tags">
+                    <span class="skill-tag">English</span>
+                    <span class="skill-tag">Telugu</span>
+                    <span class="skill-tag">Hindi</span>
+                    <span class="skill-tag">Spanish</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Volunteer Section -->
+    <section class="volunteer" id="volunteer">
+        <h2 class="section-title">Volunteer Work</h2>
+        <div class="volunteer-grid">
+            <div class="volunteer-card">
+                <h3>Teens Reach Volunteer</h3>
+                <div class="organization">San Jose Public Library</div>
+                <p class="duration">2023 - Present</p>
+                <ul>
+                    <li>Tutored young students in various subjects</li>
+                    <li>Organized fundraisers for community programs</li>
+                    <li>Planned and coordinated library events</li>
+                </ul>
+            </div>
+
+            <div class="volunteer-card">
+                <h3>Tenderfoot Scout</h3>
+                <div class="organization">Troop 446 BSA</div>
+                <p class="duration">2021 - 2024</p>
+                <ul>
+                    <li>Promoted safety and responsibility through community events</li>
+                    <li>Participated in outdoor activities and team-building exercises</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- Activities Section -->
+    <section class="activities" id="activities">
+        <h2 class="section-title">Extracurricular Activities</h2>
+        <div class="activities-grid">
+            <div class="activity-card">
+                <div class="activity-icon">💃</div>
+                <h3>Certified Bharatanatyam Dancer & Instructor</h3>
+                <div class="institution">Nritya Gurukul</div>
+                <div class="duration">2016 - Present</div>
+                <ul>
+                    <li>Performed at cultural events</li>
+                    <li>Taught both group and individual dance classes</li>
+                    <li>Passed a series of written and practical dance exams (6/7)</li>
+                </ul>
+            </div>
+
+            <div class="activity-card">
+                <div class="activity-icon">🎵</div>
+                <h3>Certified Carnatic Vocalist</h3>
+                <div class="institution">Sampada</div>
+                <div class="duration">2017 - Present</div>
+                <ul>
+                    <li>Performed at cultural events</li>
+                    <li>Tutored students in Carnatic music</li>
+                    <li>Passed a series of written and practical music exams with distinction</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact" id="contact">
+        <h2 class="section-title">Get In Touch</h2>
+        <p style="font-size: 1.2rem; margin-bottom: 2rem;">
+            I'm always open to discussing new projects, creative ideas, or opportunities to be part of your vision.
+        </p>
+        <div class="contact-info">
+            <div class="contact-item">
+                <div>📧</div>
+                <a href="mailto:brinda.nallanic@gmail.com">brinda.nallanic@gmail.com</a>
+            </div>
+            <div class="contact-item">
+                <div>📍</div>
+                <span>San Jose, California</span>
+            </div>
+        </div>
+        <div class="social-links">
+            <a href="https://github.com/brinda-nch" target="_blank" rel="noopener noreferrer" title="GitHub">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
+                </svg>
+            </a>
+            <a href="mailto:brinda.nallanic@gmail.com" title="Email">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M12 12.713l-11.985-9.713h23.97l-11.985 9.713zm0 2.574l-12-9.725v15.438h24v-15.438l-12 9.725z"/>
+                </svg>
+            </a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2025 Brinda Nallanichakravartula. All rights reserved.</p>
+        <p>Designed with passion and purpose</p>
+    </footer>
+
+    <script>
+        // Navbar scroll effect
+        window.addEventListener('scroll', function() {
+            const navbar = document.getElementById('navbar');
+            if (window.scrollY > 50) {
+                navbar.classList.add('scrolled');
+            } else {
+                navbar.classList.remove('scrolled');
+            }
+        });
+
+        // Smooth scroll for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Intersection Observer for fade-in animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -100px 0px'
+        };
+
+        const observer = new IntersectionObserver(function(entries) {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('fade-in');
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.experience-card, .skill-category, .volunteer-card, .activity-card').forEach(el => {
+            observer.observe(el);
+        });
+    </script>
+</body>
+</html>
+
