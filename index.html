@@ -3,10 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Brinda Nallanichakravartula | Portfolio</title>
+    <title>Brinda Nallani</title>
+    <link rel="shortcut icon" href="images/headstar.svg" type="image/x-icon" />
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <style>
         * {
             margin: 0;
@@ -15,12 +16,12 @@
         }
 
         :root {
-            --primary-color: #6366f1;
-            --secondary-color: #ec4899;
+            --primary-color: #b19cd9;
+            --secondary-color: #ffb6d9;
             --dark-color: #1e293b;
             --light-color: #f8fafc;
             --text-color: #334155;
-            --gradient: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            --gradient: linear-gradient(135deg, #b19cd9 0%, #ffb6d9 100%);
         }
 
         html {
@@ -28,7 +29,7 @@
         }
 
         body {
-            font-family: 'Times New Roman', Times, serif;
+            font-family: 'Oswald', sans-serif;
             color: var(--text-color);
             line-height: 1.6;
             overflow-x: hidden;
@@ -40,7 +41,7 @@
             position: fixed;
             top: 0;
             width: 100%;
-            background: #9333ea;
+            background: #b19cd9;
             backdrop-filter: blur(10px);
             box-shadow: 0 2px 20px rgba(0, 0, 0, 0.1);
             z-index: 1000;
@@ -136,7 +137,7 @@
         }
 
         .hero-content h1 {
-            font-family: 'Playfair Display', serif;
+            font-family: 'Oswald', sans-serif;
             font-size: 4rem;
             margin-bottom: 1rem;
             animation: fadeInUp 1s ease-out 0.2s both;
@@ -166,7 +167,7 @@
 
         .btn {
             padding: 1rem 2.5rem;
-            border-radius: 50px;
+            border-radius: 0;
             text-decoration: none;
             font-weight: 600;
             transition: all 0.3s ease;
@@ -177,7 +178,7 @@
         }
 
         .btn-primary {
-            background: #9333ea;
+            background: #b19cd9;
             color: white;
         }
 
@@ -210,7 +211,7 @@
             text-align: center;
             margin-bottom: 3rem;
             position: relative;
-            font-family: 'Playfair Display', serif;
+            font-family: 'Oswald', sans-serif;
         }
 
         .section-title::after {
@@ -221,8 +222,8 @@
             transform: translateX(-50%);
             width: 80px;
             height: 4px;
-            background: var(--gradient);
-            border-radius: 2px;
+            background: var(--primary-color);
+            border-radius: 0;
         }
 
         /* About Section */
@@ -247,15 +248,16 @@
         .experience-card {
             background: white;
             padding: 2rem;
-            border-radius: 15px;
-            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+            border-radius: 0;
+            box-shadow: 0 0 0 4px var(--primary-color);
             transition: all 0.3s ease;
-            border-left: 4px solid var(--primary-color);
+            border: none;
+            margin-bottom: 2rem;
         }
 
         .experience-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
+            transform: translateY(-5px);
+            box-shadow: 0 0 0 6px var(--primary-color);
         }
 
         .experience-header {
@@ -316,8 +318,8 @@
         .skill-category {
             background: white;
             padding: 2rem;
-            border-radius: 15px;
-            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+            border-radius: 0;
+            box-shadow: 0 0 0 4px var(--primary-color);
         }
 
         .skill-category h3 {
@@ -333,10 +335,10 @@
         }
 
         .skill-tag {
-            background: var(--gradient);
+            background: var(--primary-color);
             color: white;
             padding: 0.5rem 1rem;
-            border-radius: 25px;
+            border-radius: 0;
             font-size: 0.9rem;
             font-weight: 500;
         }
@@ -351,14 +353,14 @@
         .volunteer-card {
             background: white;
             padding: 2rem;
-            border-radius: 15px;
-            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+            border-radius: 0;
+            box-shadow: 0 0 0 4px var(--primary-color);
             transition: all 0.3s ease;
         }
 
         .volunteer-card:hover {
             transform: translateY(-5px);
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+            box-shadow: 0 0 0 6px var(--primary-color);
         }
 
         .volunteer-card h3 {
@@ -386,13 +388,14 @@
         .activity-card {
             background: white;
             padding: 2rem;
-            border-radius: 15px;
-            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+            border-radius: 0;
+            box-shadow: 0 0 0 4px var(--primary-color);
             transition: all 0.3s ease;
         }
 
         .activity-card:hover {
-            transform: scale(1.05);
+            transform: translateY(-5px);
+            box-shadow: 0 0 0 6px var(--primary-color);
         }
 
         .activity-icon {
@@ -470,7 +473,7 @@
             width: 50px;
             height: 50px;
             background: rgba(255, 255, 255, 0.2);
-            border-radius: 50%;
+            border-radius: 0;
             display: flex;
             align-items: center;
             justify-content: center;
@@ -586,7 +589,6 @@
         <div class="hero-content">
             <h1>Brinda Nallanichakravartula</h1>
             <p class="subtitle">Software Engineering Intern at Adstep.io | AI Developer | Quantum Computing Researcher</p>
-            <p class="location">📍 San Jose, California</p>
             <div class="cta-buttons">
                 <a href="#contact" class="btn btn-primary">Get In Touch</a>
                 <a href="#experience" class="btn btn-secondary">View My Work</a>
@@ -608,6 +610,29 @@
     </section>
 
     <!-- Experience Section -->
+    <div class="experience-card">
+        <div class="experience-header">
+            <div>
+                <div class="experience-title">Founder</div>
+                <div class="experience-company">MyCollegeMap</div>
+            </div>
+            <div class="experience-date">Recent</div>
+        </div>
+        <ul>
+            <li>
+                Designed and developed MyCollegeMap, an AI-powered web app that helps students analyze their academic and extracurricular profiles for college readiness.
+              </li>
+              <li>
+                Implemented an AI Analyzer to evaluate activities and awards, providing data-driven feedback to strengthen student applications.
+              </li>
+              <li>
+                Focused on education accessibility and equity, creating a tool for students without access to private counselors.
+              </li>
+              <li>
+                Built an intuitive UI/UX dashboard that visualizes GPA, honors, and progress, helping users identify strengths and improvement areas.
+              </li>
+        </ul>
+    </div>
     <section class="experience" id="experience">
         <h2 class="section-title">Experience</h2>
         <div class="experience-grid">
@@ -631,7 +656,7 @@
             <div class="experience-card">
                 <div class="experience-header">
                     <div>
-                        <div class="experience-title">AI Program Participant</div>
+                        <div class="experience-title">LLM Researcher</div>
                         <div class="experience-company">Algoverse AI</div>
                     </div>
                     <div class="experience-date">Recent</div>
@@ -803,10 +828,6 @@
             <div class="contact-item">
                 <div>📧</div>
                 <a href="mailto:brinda.nallanic@gmail.com">brinda.nallanic@gmail.com</a>
-            </div>
-            <div class="contact-item">
-                <div>📍</div>
-                <span>San Jose, California</span>
             </div>
         </div>
         <div class="social-links">
